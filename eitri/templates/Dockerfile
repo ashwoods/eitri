@@ -1,12 +1,10 @@
 ARG IMAGE
 FROM ${IMAGE} as eitri
 
-ARG PRE_COPY_COMMANDS="echo 'Skipping pre-copy commands'"
+ARG PRE_INSTALL="echo 'Skipping pre-copy commands'"
 ARG POST_COPY_COMMANDS="echo 'Skipping post-copy commands'"
 
-RUN ${PRE_COPY_COMMANDS}
+RUN /bin/bash -c "${PRE_INSTALL}"
 
-COPY . /workplace
-WORKDIR /workplace
-
-RUN ${POST_COPY_COMMANDS}
+COPY . /workspace
+WORKDIR /workspace

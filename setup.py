@@ -28,7 +28,7 @@ setup(
     description="Manage docker-compose based toolkits",
     long_description=__doc__,
     packages=find_packages(exclude=("tests", "tests.*")),
-    entry_points={"console_scripts": ["eitri = eitri.cli:run"]},
+    entry_points={"console_scripts": ["eitri = eitri:cli"]},
     # PEP 561
     package_data={"eitri": ["py.typed"]},
     zip_safe=False,
